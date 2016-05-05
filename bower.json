@@ -1,0 +1,23 @@
+{
+  "name": "RockPaperScissorsLezardSpock",
+  "authors": [
+    "nicolas <n.wallerand@gmail.com>"
+  ],
+  "description": "application game RockPaperScissorsLezardSpock",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "assets/bower_compoments",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "bootstrap-notify": "^0.2.0",
+    "toastr": "^2.1.2"
+  }
+}

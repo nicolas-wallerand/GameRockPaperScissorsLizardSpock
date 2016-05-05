@@ -1,0 +1,52 @@
+
+body {
+    background: #f5F5F5;
+}
+
+.footer {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin: 40px 15px 20px 15px;
+    border-top: 1px solid #eee;
+}
+
+.rpc-content-score {
+    background: #212121;
+    color: #D1A84D;
+    font-size: 18px;
+}
+
+#rpc-btn-play-game {
+    margin-bottom: 20px;
+}
+
+#rpc-winner-player-one, #rpc-winner-player-two, #rpc-content-ties, .rpc-panel-heading {
+    text-align: center;
+}
+
+#rpc-winner-player-one h1, #rpc-winner-player-two h1, #rpc-content-ties h1 {
+    color: #fff;
+}
+
+#rpc-table-history .td-player-one {
+    text-align: left;
+    width: 30%;
+}
+
+#rpc-table-history .td-player-two {
+    text-align: right;
+    width: 30%;
+}
+
+#rpc-table-history .td-round {
+    text-align: center;
+}
+
+#rpc-table-history {
+    height: 400px;
+    overflow-y: scroll;
+}
+
+#rpc-table-history img {
+    height: 20px;
+}

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>RockPaperScissorsLizarSpock</title>
+    <link rel="stylesheet" type="text/css" href="assets/bower_compoments/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/theme-paper-bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/bower_compoments/toastr/toastr.min.css">
+
+    <link rel="stylesheet" type="text/css" href="src/RockPaperScissorsLizardSpock.css">
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-4" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Rock-Paper-Scissors</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-4">
+            <p class="navbar-text">You vs. the Computer</p>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading rpc-panel-heading">Player 1 <small>Human</small></div>
+                        <div class="panel-body">
+                            <div id="rpc-winner-player-one" class="row rpc-winner-player" style="display:none">
+                                <div class="col-md-12">
+                                    <div class="alert alert-success">
+                                        <h1>WINNER</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <a href="#" class="thumbnail">
+                                        <img id="rpc-img-player-one" src="src/img/quest.png" alt="...">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12" id="rpc-contain-btn-hands">
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div id="rpc-content-ties" class="row rpc-winner-player" style="display:none">
+                <div class="col-md-12">
+                    <div class="alert alert-warning">
+                        <h1>TIES</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading rpc-panel-heading">WINS</div>
+                        <div class="panel-body">
+                            <span id="rpc-score-player-one" class="rpc-content-score btn btn-default btn-lg btn-block">0</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading rpc-panel-heading">TIES</div>
+                        <div class="panel-body">
+                            <span id="rpc-score-ties" class="rpc-content-score btn btn-default btn-lg btn-block">0</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading rpc-panel-heading">WINS</div>
+                        <div class="panel-body">
+                            <span id="rpc-score-player-two" class="rpc-content-score btn btn-default btn-lg btn-block">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <button id="rpc-btn-play-game" class="btn btn-success btn-lg btn-block">
+                        Restart Game
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading rpc-panel-heading" id="rpc-round-current">ROUND</div>
+                        <div id="rpc-table-history">
+                            <table  class="table"> </table>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading rpc-panel-heading"> Player 2 <small>Computer</small></div>
+                <div class="panel-body">
+                    <div id="rpc-winner-player-two" class="row rpc-winner-player" style="display:none">
+                        <div class="col-md-12">
+                            <div class="alert alert-success">
+                                <h1>WINNER</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <a href="#" class="thumbnail">
+                                <img id="rpc-img-player-two" src="src/img/quest.png" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="footer">
+    <p>© 2016 Nicolas wallerand.</p>
+</footer>
+<!-- BEGIN LIBRARIES -->
+<script type="text/javascript" src="assets/bower_compoments/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="assets/bower_compoments/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/bower_compoments/toastr/toastr.min.js"></script>
+<!-- END LIBRARIES -->
+<script type="text/javascript" src="src/RockPaperScissorsLizardSpock.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        var opt = {
+            pathImg: 'src/img/',
+            success : function(status){
+
+                if(status === 1){
+                    toastr.info('WINER IS PLAYER ONE');
+                }else if(status === 2){
+                    toastr.info('WINER IS PLAYER TWO');
+                }else {
+                    toastr.warning('TIES');
+                }
+
+            }
+        };
+
+         GameRockPaperScissorsLizardSpock.__construct(opt);
+
+         // GameRockPaperScissors.__construct(opt);
+    });
+</script>
+</body>
+</html>
