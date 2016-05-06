@@ -1,0 +1,22 @@
+
+# Files caches Mac Os
+.DS_Store
+.DS_Store?
+.AppleDouble
+.LSOverride
+.afpDeleted*
+
+# Icon must ends with two \r.
+Icon
+
+# Configuration directory of PhpStorm
+.idea
+
+# Thumbnails
+._*
+thumbs.db
+Thumbs.db
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
