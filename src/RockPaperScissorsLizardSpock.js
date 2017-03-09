@@ -92,8 +92,6 @@ var GameRockPaperScissors = function () {
         html += '</td>';
         html += '</tr>';
         $(_opt.selectorTableHistoryRound + ' table').append(html)
-
-
         //TODO ADD _historyRound[] => save in database
     };
 
@@ -103,12 +101,10 @@ var GameRockPaperScissors = function () {
      * @private
      */
     var _simulateMove = function () {
-
         var i = 0;
         var min = 0;
         var max = _opt.Hands.length;
         var render = (Math.floor((max-min)*Math.random())+min);
-console.log(render);
         var hand = false;
         $.each(_opt.Hands, function (key, value) {
             if (i === render) {
